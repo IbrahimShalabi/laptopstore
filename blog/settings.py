@@ -51,11 +51,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',
     
 
 
     
 ]
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 ROOT_URLCONF = 'blog.urls'
 
@@ -148,7 +153,7 @@ EMAIL_HOST_PASSWORD = 'phlv tdgp ergt slbm'  # استخدم كلمة مرور ا
 
 
 #MEDIA_ROOT= os.path.join(BASE_DIR,'static/images')
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

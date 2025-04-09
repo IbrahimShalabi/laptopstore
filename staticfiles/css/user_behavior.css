@@ -1,0 +1,55 @@
+/* تنسيق الحاوية الرئيسية */
+.analytics-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* عنوان الصفحة */
+.page-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* عنوان القسم */
+.section-title {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* تنسيق الجدول */
+.analytics-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.analytics-table thead {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.analytics-table th, 
+.analytics-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.analytics-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* رسالة عدم وجود بيانات */
+.no-data {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+    font-style: italic;
+}

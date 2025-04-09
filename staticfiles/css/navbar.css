@@ -1,0 +1,102 @@
+/* الحاوية الرئيسية للـ Navbar */
+.custom-navbar {
+  background-color:#6d8777; /* لون الخلفية الداكن */
+  color: #92dd4b; /* لون النص */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* توزيع العناصر */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ 
+
+}
+
+/* الشعار */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: 20px
+}
+
+.navbar-logo {
+  max-height: 40px; /* تكبير الشعار */
+  object-fit: contain; /* مسافة بين الشعار والقائمة */
+}
+
+/* القائمة */
+.navbar-menu {
+  display: flex;
+  flex-grow: 1; /* تأخذ القائمة مساحة إضافية */
+ 
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* المسافة بين الروابط */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  display: inline-block;
+}
+
+
+.navbar-links .nav-link {
+  text-decoration: none;
+  color:  #273526;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 5px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-links .nav-link:hover {
+  background-color:  #273526; /* لون الخلفية عند التمرير */
+  color: #ffffff;
+}
+
+
+/* قسم المستخدم */
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-right: 30px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* يجعل الصورة دائرية */
+  object-fit: cover; /* لضمان ملاءمة الصورة */
+  margin-right: 10px; /* مسافة بين الصورة واسم المستخدم */
+}
+
+.user-name {
+  font-weight:bold;
+  font-size: 14px;
+  color: #273526; /* لون النص */
+  margin-right: 20px; /* مسافة بين اسم المستخدم وزر تسجيل الخروج */
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #273526;
+  font-size: 14px;
+  font-weight:bold;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.logout-btn:hover {
+  color: #f39c12; /* لون مختلف عند التمرير */
+}

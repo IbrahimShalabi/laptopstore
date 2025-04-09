@@ -1,0 +1,185 @@
+/* الحاوية الرئيسية للـ Dashboard */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh; /* جعل الحاوية تأخذ كامل الشاشة */
+  flex-direction: row;
+  background-color: #f4f4f4;
+}
+
+/* الشريط الجانبي */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(135deg, #273526, #388e3c);
+  padding: 20px;
+  height: 100vh; 
+  position: sticky;
+  top: 0;
+  color: white;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 10px 15px;
+  background-color: #388e3c;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: #4caf50;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+/* تنسيق العناوين */
+.header {
+  font-size: 24px;
+  color: #273526;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* إحصائيات الطلبات */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.stats div {
+  background: linear-gradient(135deg, #273526, #4caf50);
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* الجداول */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.table tr:hover {
+  background-color: #f5f5f5;
+}
+.show-icon {
+  color: #4caf50; /* اللون الأخضر */
+  font-size: 20px; /* حجم الأيقونة */
+  transition: color 0.3s ease-in-out;
+}
+
+/* تغيير اللون عند تحويم الماوس */
+.show-icon:hover {
+  color: #388e3c; /* لون أخضر أغمق */
+}
+  /* تخصيص أيقونة التعديل - أخضر فاتح مع خلفية */
+.icon-edit {
+  color: white;
+  background-color: #a0d468; /* أخضر فاتح */
+  padding: 10px;
+  border-radius: 50%; /* لجعل الخلفية دائرية */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.icon-edit:hover {
+  background-color: #8cc152; /* أخضر أغمق قليلاً عند التمرير */
+  transform: scale(1.1); /* تكبير الأيقونة قليلاً عند التمرير */
+}
+
+/* تخصيص أيقونة الحذف - أخضر غامق مع خلفية */
+.icon-delete {
+  color: white;
+  background-color: #4a8f3c; /* أخضر غامق */
+  padding: 10px;
+  border-radius: 50%; /* لجعل الخلفية دائرية */
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.icon-delete:hover {
+  background-color: #3c7a30; /* أخضر داكن عند التمرير */
+  transform: scale(1.1); /* تكبير الأيقونة قليلاً عند التمرير */
+}
+
+/* تصميم إضافة اللابتوب */
+.add-laptop-card {
+  width: 300px;
+  padding: 20px;
+  background: linear-gradient(135deg, #273526, #388e3c);
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.add-laptop-card:hover {
+  transform: scale(1.05);
+}
+
+.add-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.add-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #388e3c;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #4caf50;
+  color: white;
+}

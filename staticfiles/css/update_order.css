@@ -1,0 +1,65 @@
+/* جعل الصفحة متناسقة في المنتصف */
+.update-order-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* عنوان الصفحة */
+.update-order-container h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* تنسيق النموذج */
+.update-order-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* جعل المدخلات أكثر جاذبية */
+.update-order-form input,
+.update-order-form select,
+.update-order-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.update-order-form input:focus,
+.update-order-form select:focus,
+.update-order-form textarea:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+    outline: none;
+}
+
+/* زر الحفظ */
+.update-order-form button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.update-order-form button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
