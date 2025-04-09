@@ -1,0 +1,67 @@
+{% extends "laptopstore/main.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/favorites.css' %}">
+
+
+<h2 class="favorites-title header">Favorites</h2>
+<div class="favorites-container">
+   
+    <table class="favorites-table ">
+        <thead>
+            <tr>
+                <th>الاسم</th>
+                <th>الفئة</th>
+                <th>المعالج</th>
+                <th>الرام</th>
+                <th>السعر</th>
+                <th>التاريخ المضاف</th>
+                <th>الإجراءات</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for laptop in laptops %}
+            <tr>
+                <td>{{ laptop.name }}</td>
+                <td>{{ laptop.category }}</td>
+                <td>{{ laptop.cpu }}</td>
+                <td>{{ laptop.ram }}</td>
+                <td>{{ laptop.price }}</td>
+                <td>{{ laptop.favorite_set.first.added_on|date:"d M Y, H:i" }}</td>
+                <td>
+                    <div class="actions">
+                        <!-- زر الإزالة -->
+                        <form method="post" action="{% url 'remove_from_favorites' laptop.id %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn favorite-btn" title="إزالة من المفضلة">
+                                <i class="fas fa-trash-alt"></i> 
+                            </button>
+                        </form>
+                        <!-- زر عرض التفاصيل -->
+                        <a href="{% url 'laptop_detail' laptop.id %}" class="btn view-btn" title="عرض التفاصيل">
+                            <i class="fas fa-eye"></i> 
+                        </a>
+                        <!-- زر الإضافة إلى الفاتورة -->
+                        <form method="post" action="{% url 'add_to_invoice' laptop.id %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn add-to-cart-btn" title="إضافة إلى الفاتورة">
+                                <i class="fas fa-cart-plus"></i> 
+                            </button>
+                        </form>
+                    </div>
+                    
+                </td>
+                
+                
+                
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" class="no-items">لا توجد لابتوبات في المفضلة حتى الآن.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+/* تحسين مظهر العناوين */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* إحصائيات الطلبات */
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.stats div {
+    background: linear-gradient(135deg, #273526, #4caf50);
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* تحسين مظهر الجدول */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #4caf50;
+    color: white;
+}
+
+.table td {
+    background-color: #fff;
+}
+
+.table td button {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+/* تحسين مظهر الصفوف عند التمرير */
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.container {
+    margin-top: 30px;
+}
+
+/* تخصيص زر الحذف */
+.icon-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;  /* ضبط الحجم */
+    height: 40px;
+    background-color: #4a8f3c; /* اللون الأخضر */
+    color: white !important; /* إجبار اللون الأبيض للأيقونة */
+    border: none;
+    border-radius: 50%; /* جعل الشكل دائري */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 16px; /* ضبط حجم الأيقونة */
+}
+
+.icon-delete i {
+    color: white !important; /* إجبار لون الأيقونة على الأبيض */
+}
+
+.icon-delete:hover {
+    background-color: #3c7a30; /* لون عند التحويم */
+    transform: scale(1.1);
+}

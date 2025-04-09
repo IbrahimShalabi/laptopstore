@@ -1,0 +1,25 @@
+{% extends 'laptopstore/main.html' %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/add_laptop.css' %}">
+
+
+  <h1 class="page-title header">Add New Laptop</h1>
+  <div class="add-laptop-container">
+    
+
+    
+    <form method="POST" enctype="multipart/form-data" class="add-laptop-form">
+      {% csrf_token %}
+      
+      <div class="form-group">
+        {{ form.as_p }}
+      </div>
+
+      <button type="submit" class="submit-btn">
+         Save
+      </button>
+    </form>
+  </div>
+{% endblock %}

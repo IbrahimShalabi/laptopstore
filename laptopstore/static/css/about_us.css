@@ -1,0 +1,103 @@
+/* إعادة ضبط الأنماط الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* نمط الجسم */
+body {
+    background: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* الحاوية الرئيسية */
+.container {
+    max-width: 800px; /* عرض الحاوية */
+    margin: 20px auto; /* توسيط الحاوية */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* خلفية شفافة */
+    backdrop-filter: blur(10px); /* تأثير البلور */
+    border-radius: 10px; /* زوايا مستديرة */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+}
+
+/* الأقسام */
+.about-section {
+    margin-bottom: 20px;
+}
+
+.about-container {
+    margin-bottom: 20px;
+}
+
+.about-container h2 {
+    color: #408259; /* لون العناوين */
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd; /* خط أسفل العنوان */
+    padding-bottom: 5px;
+}
+
+.about-container p, .about-container ul {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.about-container ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.about-container ul li a {
+    color: #408259; /* لون الروابط */
+    text-decoration: none;
+}
+
+.about-container ul li a:hover {
+    text-decoration: underline; /* تسطير الروابط عند التمرير */
+}
+
+/* قسم التواصل */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* لضمان استجابة التصميم */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 300px; /* عرض ثابت لكل عنصر */
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #408259; /* اللون الخاص بالأيقونات */
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.contact-item a {
+    color: #408259;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}

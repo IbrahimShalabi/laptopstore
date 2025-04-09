@@ -1,0 +1,36 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+
+
+<nav class="custom-navbar">
+  <!-- الشعار -->
+  <a class="navbar-brand" href="{% url 'home' %}">
+    <img src="{% static 'images/logooo.png' %}" alt="Logo" class="navbar-logo" />
+  </a>
+
+  <!-- القائمة -->
+  <div class="navbar-menu">
+    <ul class="navbar-links">
+      <li><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+      <li><a href="{% url 'laptops' %}" class="nav-link">Laptops</a></li>
+      <li><a href="{% url 'favorite_laptops' %}" class="nav-link">Favorites</a></li>
+      <li><a href="{% url 'profile_info' %}" class="nav-link">Profile Infoo</a></li>
+    </ul>
+  </div>
+
+  <!-- قسم المستخدم -->
+  <div class="user-info">
+    <img src="{{ request.user.coustomer.avatar.url }}" alt="User Avatar" class="user-avatar" />
+    <span class="user-name">{{ request.user }}</span>
+    <form method="POST" action="{% url 'logout' %}">
+      {% csrf_token %}
+      <button type="submit" class="logout-btn">
+        
+        
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+    </form>
+  </div>
+
+</nav>

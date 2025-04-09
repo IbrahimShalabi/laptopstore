@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism UI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="nav">About | Info | Work | Music | Blog | Store</div>
+        </div>
+        <div class="profile-section">
+            <div class="profile-pic"></div>
+            <div class="profile-info">
+                <h2>About Me</h2>
+                <p>I'm a passionate designer creating stunning UI/UX designs.</p>
+                <button class="btn">About Me</button>
+            </div>
+        </div>
+        <div class="details">
+            <div class="info-card">Location</div>
+            <div class="info-card">Portfolio</div>
+            <div class="info-card">Services</div>
+            <div class="info-card">Contacts</div>
+        </div>
+        <div class="socials">
+            <div class="icon">Twitter</div>
+            <div class="icon">LinkedIn</div>
+            <div class="icon">Behance</div>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(to bottom right, #b4e0d7, #5a7e79);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        width: 400px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: white;
+    }
+
+    .profile-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        margin-top: 10px;
+        padding: 10px 20px;
+        border: none;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .details {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .info-card {
+        height: 80px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .socials {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .icon {
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        font-size: 12px;
+    }
+</style>

@@ -1,0 +1,27 @@
+{% extends "laptopstore/main.html" %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/admin_control.css' %}">
+</head>
+
+<h1 class="page-title header">Removing the admin  </h1>
+
+<div class="admin-container">
+    {% if admins %}
+        <form method="POST" class="admin-form">
+            {% csrf_token %}
+            <select name="user_id" class="admin-select">
+                {% for admin in admins %}
+                    <option value="{{ admin.id }}">{{ admin.username }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="admin-button"> Remove</button>
+        </form>
+    {% else %}
+        <p class="no-users">There is no admin to convert it to a regular user</p>
+    {% endif %}
+</div>
+
+{% endblock %}

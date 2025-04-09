@@ -1,0 +1,30 @@
+{% extends "laptopstore/main.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/our_team.css' %}">
+
+
+
+<h2 class="header">Our Team</h2>
+<div class="team-contant">
+  {% for admin in admins %}
+  <div class="team-item">
+    <div class="team-img tb-effect">
+      <img src="{{ admin.coustomer.avatar.url|default:'path/to/default/avatar.jpg' }}" alt="{{ admin.username }}">
+      <div class="team-overlay">
+        <a href="#"><i class="fa fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="team-info">
+      <h3 class="team-info-titel">{{ admin.username }}</h3>
+      <p class="team-info-text">web designer</p>
+     
+    </div>
+  </div>
+  {% empty %}
+  <p>No admins found.</p>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "laptopstore/main.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/delivery.css' %}">
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Information</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Delivery Information</h1>
+    </header>
+    <main class="content">
+        <section class="delivery-options">
+            <h2>Delivery Options</h2>
+            <p>We offer the following delivery options:</p>
+            <ul>
+                <li><strong>Express Delivery:</strong> Delivered within 1-2 business days.</li>
+                <li><strong>Standard Delivery:</strong> Delivered within 3-5 business days.</li>
+            </ul>
+        </section>
+        <section class="delivery-fees">
+            <h2>Delivery Fees</h2>
+            <p>Our delivery fees are as follows:</p>
+            <ul>
+                <li>Free delivery for orders above $100.</li>
+                <li>$10 delivery fee for orders below $100.</li>
+            </ul>
+        </section>
+        <section class="terms">
+            <h2>Terms & Conditions</h2>
+            <p>Please ensure your shipping details are accurate to avoid delivery delays.
+                 Additional charges may apply for remote or rural areas.</p>
+        </section>
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <!-- عنصر الهاتف -->
+                <div class="contact-item">
+                    <i class="fa fa-phone"></i>
+                    <p><strong>Phone:</strong> <a href="tel:0987194421">0987-194-421</a></p>
+                </div>
+                <!-- عنصر البريد الإلكتروني -->
+                <div class="contact-item">
+                    <i class="fa fa-envelope"></i>
+                    <p><strong>Email:</strong> <a href="mailto:ayman32819@gmail.com">ayman32819@gmail.com</a></p>
+                </div>
+                <!-- عنصر الموقع -->
+                <div class="contact-item">
+                    <i class="fa fa-map-marker"></i>
+                    <p><strong>Location:</strong> Damascus Syria</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+{% endblock %}

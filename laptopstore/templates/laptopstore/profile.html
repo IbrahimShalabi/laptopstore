@@ -1,0 +1,49 @@
+{% extends "laptopstore/main.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h1 class="header">Profile</h1>
+
+<div class="stats">
+    <div>Total Orders: <span class="stats-badge">{{ num_of_order }}</span></div>
+    <div>Pending: <span class="stats-badge">{{ num_Pending }}</span></div>
+    <div>Completed: <span class="stats-badge">{{ num_Completed }}</span></div>
+    <div>Canceled: <span class="stats-badge">{{ num_Canceled }}</span></div>
+    <div>Shipped: <span class="stats-badge">{{ num_Shipped }}</span></div>
+    <div>Processing: <span class="stats-badge">{{ num_Processing }}</span></div>
+</div>
+
+<div class="container p-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Laptop</th>
+                <th scope="col">Category</th>
+                <th scope="col">Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in orders %}
+                <tr>
+                    <td>{{ item.Laptop }}</td>
+                    <td>{{ item.Laptop.category }}</td>
+                    <td>{{ item.date_created }}</td>
+                    <td>{{ item.status }}</td>
+                    <td>
+                        <form method="POST" action="{% url 'cancel_order' item.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="icon-delete">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

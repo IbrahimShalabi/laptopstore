@@ -1,0 +1,76 @@
+{% extends "laptopstore/main.html" %}
+{% load static %}
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'css/customer.css' %}">
+
+  <h1 class="page-title header">Customer Details</h1>
+
+  <div class="customer-page">
+    
+    <!-- القسم الأول: معلومات العميل -->
+    <div class="customer-info">
+      <h2>Customer Information</h2>
+      <div><strong>Full Name:</strong> {{ customer.name }}</div>
+      <div><strong>Email:</strong> {{ customer.email }}</div>
+      <div><strong>Age:</strong> {{ customer.age }}</div>
+      <div><strong>Phone:</strong> {{ customer.phone }}</div>
+      <div><strong>Number of Orders:</strong> {{ num_of_order }}</div>
+      <a href="{% url 'create' customer.id %}" class="create-order-btn">Create Order</a>
+    </div>
+
+    <!-- القسم الثاني: البحث والطلبات -->
+    <div class="orders-section">
+      
+      <!-- الفلتر -->
+      <div class="search-form">
+        <h2>Search Orders</h2>
+        <form method="GET">
+          {% for field in searchfilter.form %}
+            <div>
+              <label>{{ field.label }}</label>
+              {{ field }}
+            </div>
+          {% endfor %}
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <!-- جدول الطلبات -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Laptop</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in orders %}
+            <tr>
+              <td>{{ item.Laptop }}</td>
+              <td>{{ item.Laptop.category }}</td>
+              <td>{{ item.date_created }}</td>
+              <td>{{ item.status }}</td>
+              <td>
+                <!-- زر التعديل -->
+                  <a class="btn " href="{% url 'update_order' item.id %}">
+                    <i class="fa-solid fa-pen-to-square icon-edit"></i> 
+                  </a>
+
+                  <!-- زر الحذف -->
+                  <a class="btn " href="{% url 'delete' item.id %}">
+                    <i class="fa-solid fa-trash icon-delete"></i> 
+                  </a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login_page.css' %}">
+<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+
+<section style="background: url('{% static 'images/11.jpg' %}') no-repeat center center; background-size: cover; min-height: 100vh; width: 100%;">
+    <div class="form-box">
+        <div class="form-value">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <h2>Login</h2>
+                <div class="inputbox">
+                    <i class="icon fa fa-user"></i>
+                    <input type="text" name="username" class="form-control" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="inputbox">
+                    <i class="icon fa fa-key"></i>
+                    <input name="password" type="password" class="form-control" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="forget">
+                    <label for="remember">
+                        <input type="checkbox" name="remember"> Remember Me
+                        <a href="{% url 'reset_password' %}">Forget Password</a>
+                    </label>
+                </div>
+                <button type="submit" class="button">Login</button>
+                <div class="register">
+                    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+                </div>
+            </form>
+            <!--{% for msg in messages %}
+                <h4>{{ msg }}</h4>
+            {% endfor %}-->
+        </div>
+    </div>
+</section>

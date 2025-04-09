@@ -1,0 +1,160 @@
+
+  
+.laptop-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 318px);
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; /* محاذاة العناصر إلى المنتصف */
+}
+  
+  /* تصميم بطاقة اللابتوب */
+  .laptop-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .laptop-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* صورة اللابتوب */
+  .laptop-image img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+  }
+  
+  .no-image {
+    text-align: center;
+    font-size: 1.2em;
+    color: #888;
+    height: 200px;
+    line-height: 200px;
+  }
+  
+  /* تفاصيل اللابتوب */
+  .laptop-details {
+    padding: 15px;
+  }
+  
+  .laptop-name {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .laptop-details p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  /* أزرار الإجراءات */
+  .laptop-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .favorite-btn {
+    background-color: #ffe4e1;
+    color: #d9534f;
+  }
+  
+  .add-to-cart-btn {
+    background-color: #dff0d8;
+    color: #5cb85c;
+  }
+  
+  .login-btn {
+    background-color: #d9edf7;
+    color: #31708f;
+  }
+  
+  .view-btn {
+    background-color: #337ab7;
+    color: white;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .favorite-btn:hover {
+    background-color: #f2dede;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #c6e9c7;
+  }
+  
+  .login-btn:hover {
+    background-color: #c4e3f3;
+  }
+  
+  .view-btn:hover {
+    background-color: #286090;
+  }
+  
+  .search-form {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+  }
+  
+  .search-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  .search-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .search-btn {
+    padding: 10px;
+    background-color: #45624e;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn i {
+    font-size: 1.2em;
+}
+
+.search-btn:hover {
+    background-color: #273526;
+}

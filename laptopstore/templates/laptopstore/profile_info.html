@@ -1,0 +1,24 @@
+{% extends "laptopstore/main.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/profile_info.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h1 class="page-title header">Profile Info</h1>
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="avatar">
+            <img src="{{ request.user.coustomer.avatar.url }}" alt="User Avatar">
+        </div>
+        <h2>{{ request.user.username }}</h2>
+        <p>{{ request.user.email }}</p>
+        
+        <form method="POST" action="" enctype="multipart/form-data" class="profile-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Edit Profile</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

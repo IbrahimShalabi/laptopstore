@@ -1,0 +1,20 @@
+.header {
+    
+    max-width: 1000px;
+    margin: 40px auto; /* توسيط العنصر بشكل تلقائي */
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.4); /* خلفية شبه شفافة */
+    backdrop-filter: blur(10px); /* تأثير البلور */
+    color: #408259;
+    border-radius: 10px; /* زوايا مستديرة */
+    transition: all 0.5s ease; /* انتقال ناعم لتأثير hover */
+}
+
+/* تأثير hover */
+.header:hover {
+    background: rgba(64, 130, 89, 0.6); /* تغيير مستوى الشفافية */
+    color: #ffffff; /* تغيير لون النص عند التمرير */
+    transform: scale(1.05); /* تكبير العنصر بشكل طفيف */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* إضافة ظل */
+}

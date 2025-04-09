@@ -1,0 +1,21 @@
+{% extends "laptopstore/main.html" %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/update_order.css' %}">
+</head>
+
+<h1 class="page-title header">Update Order</h1>
+<div class="update-order-container">
+    
+    <form method="POST" class="update-order-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">
+             Save
+        </button>
+    </form>
+</div>
+
+{% endblock %}

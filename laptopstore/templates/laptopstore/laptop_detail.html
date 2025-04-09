@@ -1,0 +1,85 @@
+{% extends "laptopstore/main.html" %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/laptops_detail.css' %}">
+<div class="container pt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- Carousel لعرض الصورة الرئيسية -->
+      <div id="laptopCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          {% for image in laptop.image_list %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <img src="{{ image }}" class="d-block w-100 main-image" alt="Laptop Image" 
+              data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage('{{ image }}')">
+          </div>
+          {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#laptopCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#laptopCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- Thumbnails لعرض الصور المصغرة -->
+      <div class="d-flex justify-content-center">
+        {% for image in laptop.image_list %}
+        <div class="thumbnail mx-1" onclick="navigateToSlide({{ forloop.counter0 }})">
+          <img src="{{ image }}" class="img-thumbnail" alt="Thumbnail">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <!-- عرض التفاصيل -->
+      <h2>{{ laptop.name }}</h2>
+      <p><strong>Category:</strong> {{ laptop.get_category_display }}</p>
+      <p><strong>Price:</strong> ${{ laptop.price }}</p>
+      <p><strong>RAM:</strong> {{ laptop.ram }}</p>
+      <p><strong>Storage (ROM):</strong> {{ laptop.rom }}</p>
+      <p><strong>CPU:</strong> {{ laptop.cpu }}</p>
+      <p><strong>GPU:</strong> {{ laptop.gpu }}</p>
+      <p><strong>Weight:</strong> {{ laptop.weight }} kg</p>
+      <p><strong>Battery:</strong> {{ laptop.size_battery }}</p>
+      <p><strong>Monitor Size:</strong> {{ laptop.size_monitor }}</p>
+      <p><strong>Camera:</strong> {{ laptop.camera }}</p>
+      <p><strong>Fingerprint Sensor:</strong> {{ laptop.fingerprint }}</p>
+      <p><strong>Description:</strong></p>
+      <p>{{ laptop.description }}</p>
+      <a href="{% url 'add_to_favorites' laptop.id %}" class="btn favorite-btn">
+        <i class="fas fa-heart"></i> Favorite
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal لتكبير الصورة -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <img id="modalImage" src="" class="img-fluid" alt="Laptop Image">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showImage(imageSrc) {
+    document.getElementById('modalImage').src = imageSrc;
+  }
+
+  function navigateToSlide(index) {
+    var carousel = document.getElementById('laptopCarousel');
+    var carouselInstance = bootstrap.Carousel.getInstance(carousel);
+    carouselInstance.to(index);
+  }
+</script>
+
+{% endblock %}

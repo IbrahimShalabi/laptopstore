@@ -1,0 +1,52 @@
+{% extends "laptopstore/main.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/user_behavior.css' %}">
+
+
+<h1 class="page-title header">User behavior analysis  </h1>
+
+<div class="analytics-container">
+    <h3 class="section-title">Top Purchasing Users</h3>
+    
+    
+    
+    <canvas id="customerChart"></canvas>
+</div>
+
+
+
+<script src="{% static 'js/chart.umd.js' %}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var ctx = document.getElementById('customerChart').getContext('2d');
+        var customerNames = {{ customer_names|safe }};
+        var orderCounts = {{ order_counts|safe }};
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: customerNames,
+                datasets: [{
+                    label: 'عدد الطلبات',
+                    data: orderCounts,
+                    backgroundColor: 'rgba(75, 192, 192, 0.8)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+
+{% endblock %}
